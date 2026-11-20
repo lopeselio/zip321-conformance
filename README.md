@@ -11,12 +11,12 @@ means; this project measures whether they do.
 1. **Vectors.** A versioned JSON file of cases, each with a URI, whether it is valid, and either the expected payments or
    the expected error (and the parameter it concerns). Seed it from the ZIP's own examples, the reference Rust
    [`zip321`](https://crates.io/crates/zip321) crate's tests, and the cases in
-   [zip321-js](https://github.com/lopeselio/zip321-js) (duplicate parameters, leading-zero indices, more than 8
+   [zcash-zip321](https://github.com/lopeselio/zcash-zip321) (duplicate parameters, leading-zero indices, more than 8
    decimals, amounts above the supply cap, memos to transparent addresses, mixed networks, unknown `req-` parameters,
    `req-asset`, …).
 2. **Runners.** Small adapters that feed every vector to an implementation and record the result:
    - the Rust `zip321` crate (reference);
-   - [zip321-js](https://github.com/lopeselio/zip321-js);
+   - [zcash-zip321](https://github.com/lopeselio/zcash-zip321);
    - zcash.js, once it supports ZIP-321;
    - Thus Spoke Zakura's `/api/v1/zip321/parse` endpoint.
 3. **Report.** A generated table: which implementations accept, reject, or misread each case, published as a page.
